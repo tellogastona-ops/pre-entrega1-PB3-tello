@@ -1,0 +1,38 @@
+paths:
+  /api/users:
+    get:
+      summary: Obtiene todos los usuarios
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Lista de usuarios obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: array
+                    items:
+                      type: object
+  /api/users/{uid}:
+    get:
+      summary: Obtiene un usuario por su ID
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: ID del usuario a buscar
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Usuario encontrado con éxito
+        "404":
+          description: Usuario no encontrado

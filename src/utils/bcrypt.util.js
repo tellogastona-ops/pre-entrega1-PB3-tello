@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt';
 
 /**
- * Hashea una contraseña usando bcrypt.
- * @param {string} password 
+ * Genera el hash de una contraseña usando bcrypt.
+ * @param {string} password - Contraseña en texto plano
  * @returns {string} Hash resultante
  */
 export const createHash = (password) => {
