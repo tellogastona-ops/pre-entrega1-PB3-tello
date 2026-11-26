@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instalamos las dependencias en el contenedor
-RUN npm install
+RUN npm ci
 
 # Copiamos el resto del código fuente del proyecto
 COPY . .

@@ -6,11 +6,13 @@ import petsRouter from './routes/pets.router.js';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUiExpress from 'swagger-ui-express';
 import { swaggerOptions } from './config/swagger.config.js';
+import adoptionRouter from './routes/adoption.router.js';
 
 const specs = swaggerJsdoc(swaggerOptions);
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.use('/api/adoptions', adoptionRouter);
 app.use('/api/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
